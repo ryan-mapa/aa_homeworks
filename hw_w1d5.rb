@@ -1,4 +1,4 @@
-class Stack
+class Stack #stack ADT implemented with an array
 
   def initialize
     @stack = Array.new
@@ -18,7 +18,7 @@ class Stack
 
 end
 
-class Queue
+class Queue #queue ADT implemented with an array
 
   def initialize
     @queue = Array.new
@@ -38,7 +38,7 @@ class Queue
 
 end
 
-class Map
+class Map #map ADT implemented with an array of 2 element arrays
 
   def initialize
     @my_map = Array.new
