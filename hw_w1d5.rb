@@ -42,6 +42,10 @@ class Map #map ADT implemented with an array of 2 element arrays
 
   def initialize
     @my_map = Array.new
+    update_keys
+  end
+
+  def update_keys
     @keys = @my_map.map {|pair| pair[0]}
   end
 
@@ -50,9 +54,9 @@ class Map #map ADT implemented with an array of 2 element arrays
       puts "Already exists"
     else
       @my_map << [key, value]
-      @keys = @my_map.map {|pair| pair[0]}
+      update_keys
     end
-    "This doesn't return anything"
+    "Key and value added. (Or not)"
   end
 
   def lookup(key)
@@ -65,7 +69,7 @@ class Map #map ADT implemented with an array of 2 element arrays
 
   def remove(key)
     @my_map = @my_map.reject {|pair| pair[0] == key}
-    @keys = @my_map.map {|pair| pair[0]}
+    update_keys
   end
 
   def show
