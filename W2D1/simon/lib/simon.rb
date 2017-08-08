@@ -35,10 +35,9 @@ class Simon
 
   end
 
-  def add_random_color
-    colors = ["red", "blue", "yellow", "green"]
+  def add_random_color    
     choose = rand(3)
-    seq << colors[choose]
+    seq << COLORS[choose]
   end
 
   def round_success_message
