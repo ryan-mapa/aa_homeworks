@@ -8,7 +8,7 @@ without blocks)! Be sure to look over the solutions when you're done.
 
 describe Dessert do
   let(:chef) { double("chef", name: "Ryan") }
-  let(:ice_cream) { Dessert.new("cold cream", 50, "Ryan")}
+  let(:ice_cream) { Dessert.new("cold cream", 50, chef)}
 
   describe "#initialize" do
     it "sets a type" do
