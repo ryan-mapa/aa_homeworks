@@ -78,8 +78,7 @@ class Play
   end
 end
 
-class Playwrights
-  include Singleton
+class Playwright
   attr_accessor :id, :name, :birth_year
 
   def initialize(options)
@@ -90,7 +89,7 @@ class Playwrights
 
   def self.all
     data = PlayDBConnection.instance.execute("SELECT * FROM playwrights")
-    data.map { |datum| Playwrights.new(datum) }
+    data.map { |datum| Playwright.new(datum) }
   end
 
   def find_by_name(name)
@@ -102,7 +101,7 @@ class Playwrights
       WHERE
         name = ?
     SQL
-    Playwrights.new(playwright)
+    Playwright.new(playwright)
   end
 
   def create
