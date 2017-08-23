@@ -8,8 +8,13 @@ class BooksController < ApplicationController
     render :new
   end
 
+  # def show
+  #   book = Book.find_by(:id params[:id])
+  #   render json: book
+  # end
+
   def create
-    book = Book.new(params)
+    book = Book.new(book_params)
     if book.save
       redirect_to books_url
     else
@@ -17,6 +22,16 @@ class BooksController < ApplicationController
       render :new
     end
   end
+
+  # def create
+  #   book = Book.new(book_params)
+  #   if book.save
+  #     render json: book
+  #     redirect_to books_url
+  #   else
+  #     render json: book.errors.full_messages, status: :unprocessable_entity
+  #   end
+  # end
 
   def destroy
     book = Book.find(params[:id])
