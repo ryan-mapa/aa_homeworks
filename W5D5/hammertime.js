@@ -38,10 +38,3 @@ function hungryForApples () {
     });
   });
 }
-
-
-// Ask the user if they'd like tea.
-// console.log their response.
-// Ask the user if they'd like biscuits.
-// console.log their complete response: So you ${firstAns} want tea and you ${secondAns} want coffee.
-// Close the reader.
